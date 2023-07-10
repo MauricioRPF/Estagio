@@ -9,7 +9,7 @@ Minhas experiências acadêmicas incluem participação em feiras de tecnologia,
 
 ## Sprints 
 
-1. [Sprint 1](/Sprint%201/README.md) Nesta sprint, tive a oportunidade de aprender adequadamente as melhores práticas para o uso e manuseio dos repositórios e arquivos no git e github, eu já possuía uma noção básica, mas este curso melhorou a minha compreensão à respeito de quais comandos utilizar de acordo com as minhas necessidades. O curso de Linux foi extremamente objetivo e completo, agora me sinto mais confiante e entusiasmado para utilizar o sistema operacional como ambiente de trabalho!
+1. [Sprint 1](/Sprint_1/README.md) Nesta sprint, tive a oportunidade de aprender adequadamente as melhores práticas para o uso e manuseio dos repositórios e arquivos no git e github, eu já possuía uma noção básica, mas este curso melhorou a minha compreensão à respeito de quais comandos utilizar de acordo com as minhas necessidades. O curso de Linux foi extremamente objetivo e completo, agora me sinto mais confiante e entusiasmado para utilizar o sistema operacional como ambiente de trabalho!
 
 
 
