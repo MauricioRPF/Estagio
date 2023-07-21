@@ -1,0 +1,93 @@
+Seção2
+
+---E8
+
+SELECT tbvendedor.cdvdd, tbvendedor.nmvdd
+FROM tbvendedor
+INNER JOIN tbvendas ON tbvendedor.cdvdd = tbvendas.cdvdd
+WHERE tbvendas.status = 'Concluído'
+GROUP BY tbvendedor.cdvdd, tbvendedor.nmvdd
+ORDER BY COUNT(tbvendas.cdven) DESC
+LIMIT 1;
+
+---E9
+
+SELECT tbvendas.cdpro, tbvendas.nmpro
+FROM tbvendas
+WHERE tbvendas.status = 'Concluído'
+AND tbvendas.dtven BETWEEN '2014-02-03' AND '2018-02-02'
+GROUP BY tbvendas.cdpro, tbvendas.nmpro
+ORDER BY SUM(tbvendas.qtd) DESC
+LIMIT 1;
+
+---E10
+
+SELECT tbvendedor.nmvdd AS vendedor,
+       SUM(tbvendas.qtd * tbvendas.vrunt) AS valor_total_vendas,
+       ROUND(SUM(tbvendas.qtd * tbvendas.vrunt) * tbvendedor.perccomissao / 100, 2) AS comissao
+FROM tbvendedor
+INNER JOIN tbvendas ON tbvendas.cdvdd = tbvendedor.cdvdd
+WHERE tbvendas.status = 'Concluído'
+GROUP BY tbvendedor.nmvdd, tbvendedor.perccomissao
+ORDER BY comissao DESC
+
+---E11
+
+SELECT tbvendas.cdcli, tbvendas.nmcli, SUM(tbvendas.qtd * tbvendas.vrunt) AS gasto
+FROM tbvendas
+WHERE tbvendas.status = 'Concluído'
+GROUP BY tbvendas.cdcli, tbvendas.nmcli
+ORDER BY gasto DESC
+LIMIT 1;
+
+---E12
+
+SELECT tbdependente.cddep, tbdependente.nmdep, tbdependente.dtnasc, SUM(tbvendas.qtd * tbvendas.vrunt) AS valor_total_vendas
+FROM tbvendedor
+JOIN tbdependente ON tbvendedor.cdvdd = tbdependente.cdvdd
+JOIN tbvendas ON tbvendedor.cdvdd = tbvendas.cdvdd
+WHERE tbvendas.status = 'Concluído' AND tbvendas.deletado = 0 AND tbvendedor.perccomissao > 0
+GROUP BY tbdependente.cddep, tbdependente.nmdep, tbdependente.dtnasc
+HAVING SUM(tbvendas.qtd * tbvendas.vrunt) = (
+    SELECT MIN(total_vendas)
+    FROM (
+        SELECT SUM(tbvendas.qtd * tbvendas.vrunt) AS total_vendas
+        FROM tbvendedor
+        JOIN tbvendas ON tbvendedor.cdvdd = tbvendas.cdvdd
+        WHERE tbvendas.status = 'Concluído' AND tbvendas.deletado = 0 AND tbvendedor.perccomissao > 0
+        GROUP BY tbvendedor.cdvdd
+    ) AS vendas_por_vendedor
+);
+
+---E13
+
+SELECT tbvendas.cdpro, tbvendas.nmcanalvendas, tbvendas.nmpro, SUM(tbvendas.qtd) AS quantidade_vendas
+FROM tbvendas
+WHERE tbvendas.status = 'Concluído' 
+GROUP BY tbvendas.cdpro, tbvendas.nmcanalvendas, tbvendas.nmpro
+ORDER BY quantidade_vendas ASC
+LIMIT 10;
+
+---E14
+
+SELECT tbvendas.estado, ROUND(AVG(tbvendas.qtd * tbvendas.vrunt), 2) AS gastomedio
+FROM tbvendas
+WHERE tbvendas.status = 'Concluído'
+GROUP BY tbvendas.estado
+ORDER BY gastomedio DESC;
+
+---E15
+
+SELECT cdven
+FROM tbvendas
+WHERE deletado = 1
+ORDER BY cdven ASC;
+
+---E16
+
+SELECT tbvendas.estado, tbvendas.nmpro, ROUND(AVG(tbvendas.qtd), 4) AS quantidade_media
+FROM tbvendas
+WHERE tbvendas.status = 'Concluído'
+GROUP BY tbvendas.estado, tbvendas.nmpro
+ORDER BY tbvendas.estado ASC, tbvendas.nmpro ASC;
+

@@ -1,0 +1,73 @@
+Seção 1
+
+---E1
+
+SELECT cod, titulo, autor, editora, valor, publicacao, edicao, idioma
+FROM  livro
+WHERE publicacao > '2014-12-31'
+ORDER BY cod ASC;
+
+
+---E2
+
+SELECT titulo, valor
+FROM livro
+ORDER BY valor DESC
+LIMIT 10;
+
+---E3
+
+SELECT
+    COUNT(*) AS quantidade, 
+    e.nome, 
+    end.estado, 
+    end.cidade
+FROM livro AS l
+JOIN editora AS e
+    ON l.editora = e.codeditora
+JOIN endereco AS end
+    ON e.endereco = end.codendereco
+GROUP BY e.nome, end.estado, end.cidade
+ORDER BY quantidade DESC
+LIMIT 5;
+
+---E4
+
+SELECT
+    a.nome, 
+    a.codautor, 
+    a.nascimento, 
+    COUNT(l.cod) AS quantidade
+FROM autor AS a
+LEFT JOIN livro AS l
+    ON l.autor = a.codautor
+GROUP BY a.nome, a.codautor, a.nascimento
+ORDER BY a.nome ASC;
+
+---E5
+
+SELECT 
+    DISTINCT a.nome
+FROM autor AS a
+INNER JOIN livro AS l ON a.codautor = l.autor
+INNER JOIN editora AS e ON l.editora = e.codeditora
+INNER JOIN endereco AS end ON e.endereco = end.codendereco
+WHERE end.estado NOT IN ('PARANÁ', 'RIO GRANDE DO SUL')
+ORDER BY a.nome ASC;
+
+---E6
+
+SELECT a.codautor, a.nome, COUNT(l.cod) AS quantidade_publicacoes
+FROM autor a
+JOIN livro l ON l.autor = a.codautor
+GROUP BY a.codautor, a.nome
+ORDER BY quantidade_publicacoes DESC
+LIMIT 1;
+
+---E7
+
+SELECT a.nome
+FROM autor a
+LEFT JOIN livro l ON l.autor = a.codautor
+WHERE l.cod IS NULL
+ORDER BY a.nome ASC;

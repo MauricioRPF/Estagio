@@ -11,6 +11,7 @@ Minhas experiências acadêmicas incluem participação em feiras de tecnologia,
 
 1. [Sprint 1](/Sprint_1/README.md) Nesta sprint, tive a oportunidade de aprender adequadamente as melhores práticas para o uso e manuseio dos repositórios e arquivos no git e github, eu já possuía uma noção básica, mas este curso melhorou a minha compreensão à respeito de quais comandos utilizar de acordo com as minhas necessidades. O curso de Linux foi extremamente objetivo e completo, agora me sinto mais confiante e entusiasmado para utilizar o sistema operacional como ambiente de trabalho!
 
+2. [Sprint 2](/Sprint_2/README.md) Nesta sprint, aprendi os comandos e lógicas para construir e manusear o banco de dados em SQL de maneira objetiva, os exercícios foram fundamentais para exemplificar as diversas situações que terei de lidar, o curso de big data foi importante para ter conhecimentos de diversos tópicos sobre tecnologias e culturas que eu não conhecia previamente.
 
 
 
