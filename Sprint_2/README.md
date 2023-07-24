@@ -14,8 +14,7 @@
 
 1. [Certificado SQL](/Sprint_2/certificado/SQL.jpg)
 
-2. [Certificado Big Data](/certificado/Big_data.jpg)
-
+2. [Certificado BigData](/Sprint_2/certificado/Big_data.jpg)
 
 
 
