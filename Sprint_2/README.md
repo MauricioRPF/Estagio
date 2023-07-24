@@ -4,7 +4,7 @@
 
 2. [Resposta ecercício 2](/Sprint_2/exercicios/Ex2_5_editoras.csv)
 
-# evidencias
+# Evidências
 
 1. [Seção 1](/Sprint_2/evidencias/seção1.txt)
 
