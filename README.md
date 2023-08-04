@@ -13,6 +13,6 @@ Minhas experiências acadêmicas incluem participação em feiras de tecnologia,
 
 2. [Sprint 2](/Sprint_2/README.md) Nesta sprint, aprendi os comandos e lógicas para construir e manusear o banco de dados em SQL de maneira objetiva, os exercícios foram fundamentais para exemplificar as diversas situações que terei de lidar, o curso de big data foi importante para ter conhecimentos de diversos tópicos sobre tecnologias e culturas que eu não conhecia previamente.
 
-
+3. [Sprint 3](/Sprint_3/README.md)Nesta sprint, tive a oportunidade de aprender sobre a linguagem python a qual eu ainda não tinha contato anteriormente, seus paradigmas e usos, tais como orientação objeto, manipulação de arquivos, funções, e gerenciamento de pacoes. Em suma foi um ótimo curso e uma experiência enriquecedora.
 
 
