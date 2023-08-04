@@ -1,0 +1,352 @@
+----1
+
+def valida_campo(linha):  # Robert Downey, Jr.
+    campos = []
+    campo = ""
+    aspas = False
+
+    for char in linha:
+        if char == ',' and not aspas:
+            campos.append(campo.strip())
+            campo = ""
+        else:
+            campo += char
+            if char == '"':
+                aspas = not aspas
+
+    campos.append(campo.strip())
+    return campos
+
+
+def ator_com_maior_numero_de_filmes(linhas_csv):
+    cabecalho = valida_campo(linhas_csv[0].strip())
+    indice_filmes = cabecalho.index('Number of Movies')
+
+    ator_maior_numero_filmes = None
+    maior_numero_filmes = 0
+
+    for linha in linhas_csv[1:]:
+        campos = valida_campo(linha.strip())
+
+        numero_filmes = int(
+            float(campos[indice_filmes].replace(",", "")))
+
+        if numero_filmes > maior_numero_filmes:
+            maior_numero_filmes = numero_filmes
+            ator_maior_numero_filmes = campos[0]
+
+    return ator_maior_numero_filmes, maior_numero_filmes
+
+def le_arquivo(nome_arquivo):
+    arquivo = open(nome_arquivo, 'r')
+    linhas = arquivo.readlines()
+    arquivo.close()
+    return linhas
+
+
+def escrever_arquivo(resultado):
+    with open('etapa-1.txt', 'w', encoding="utf8") as arquivo:
+        arquivo.write(resultado)
+
+
+def main():
+    arquivo_csv = 'actors.csv'
+    linhas_csv = le_arquivo(arquivo_csv)
+    ator, numero_filmes = ator_com_maior_numero_de_filmes(linhas_csv)
+
+    resultado = f"O ator/atriz com maior número de filmes é '{ator}' com {numero_filmes} filmes."
+    print(resultado)
+
+    escrever_arquivo(resultado)
+
+
+if __name__ == "__main__":
+    main()
+
+
+----2
+
+
+def valida_campo(linha):
+    campos = []
+    campo = ""
+    aspas = False
+
+    for char in linha:
+        if char == ',' and not aspas:
+            campos.append(campo.strip())
+            campo = ""
+        else:
+            campo += char
+            if char == '"':
+                aspas = not aspas
+
+    campos.append(campo.strip())
+    return campos
+
+def le_arquivo(nome_arquivo):
+    arquivo = open(nome_arquivo, 'r', encoding="utf-8")
+    linhas = arquivo.readlines()
+    arquivo.close()
+    return linhas
+
+def escrever_arquivo(resultado):
+    with open('etapa-2.txt', 'w', encoding="utf8") as arquivo:
+        for ator, media_faturamentos in resultado.items():
+            media = sum(media_faturamentos) / len(media_faturamentos)
+            arquivo.write(f"{ator}: {media:.2f}\n")
+
+
+def average_per_actor(linhas_csv):
+    cabecalho = valida_campo(linhas_csv[0].strip())
+    indice_ator = cabecalho.index('Actor')
+    average_billing_index = cabecalho.index('Average per Movie')
+
+    atores_medias = {}
+
+    for linha in linhas_csv[1:]:
+        campos = valida_campo(linha.strip())
+
+        ator = campos[indice_ator]
+        media_faturamento = float(
+            campos[average_billing_index].replace(",", ""))
+
+        if ator in atores_medias:
+            atores_medias[ator].append(media_faturamento)
+        else:
+            atores_medias[ator] = [media_faturamento]
+
+    return atores_medias
+
+
+def main():
+    arquivo_csv = 'actors.csv'
+    linhas_csv = le_arquivo(arquivo_csv)
+    resultado = average_per_actor(linhas_csv)
+
+    print("Média faturamento dos atores:")
+    for ator, media_faturamentos in resultado.items():
+        media = sum(media_faturamentos) / len(media_faturamentos)
+        print(f"{ator}: {media:.2f}")
+
+    escrever_arquivo(resultado)
+
+
+if __name__ == "__main__":
+    main()
+
+
+---3
+
+def valida_campo(linha):
+    campos = []
+    campo = ""
+    aspas = False
+
+    for char in linha:
+        if char == ',' and not aspas:
+            campos.append(campo.strip())
+            campo = ""
+        else:
+            campo += char
+            if char == '"':
+                aspas = not aspas
+
+    campos.append(campo.strip())
+    return campos
+
+def le_arquivo(nome_arquivo):
+    arquivo = open(nome_arquivo, 'r')
+    linhas = arquivo.readlines()
+    arquivo.close()
+    return linhas
+
+def escrever_arquivo(resultado):
+    with open('etapa-3.txt', 'w', encoding="utf8") as arquivo:
+        arquivo.write(resultado)
+
+
+def ator_com_maior_media_faturamento(linhas_csv):
+    cabecalho = valida_campo(linhas_csv[0].strip())
+    indice_ator = cabecalho.index('Actor')
+    indice_media_faturamento = cabecalho.index('Average per Movie')
+
+    ator_maior_media = None
+    maior_media = 0
+
+    for linha in linhas_csv[1:]:
+        campos = valida_campo(linha.strip())
+        ator = campos[indice_ator]
+        media_faturamento = float(
+            campos[indice_media_faturamento].replace(",", ""))
+
+        if media_faturamento > maior_media:
+            maior_media = media_faturamento
+            ator_maior_media = ator
+
+    return ator_maior_media, maior_media
+
+
+def main():
+    arquivo_csv = 'actors.csv'
+    linhas_csv = le_arquivo(arquivo_csv)
+    ator_maior_media, maior_media = ator_com_maior_media_faturamento(linhas_csv)
+
+    resultado = f"O ator/atriz com maior média de faturamento por filme é '{ator_maior_media}' com média de {maior_media:.2f}"
+    print(resultado)
+    escrever_arquivo(resultado)
+
+
+if __name__ == "__main__":
+    main()
+
+----4
+
+def valida_campo(linha):
+    campos = []
+    campo = ""
+    aspas = False
+
+    for char in linha:
+        if char == ',' and not aspas:
+            campos.append(campo.strip())
+            campo = ""
+        else:
+            campo += char
+            if char == '"':
+                aspas = not aspas
+
+    campos.append(campo.strip())
+    return campos
+
+
+def encontrar_filmes_mais_frequentes(linhas_csv):
+    cabecalho = valida_campo(linhas_csv[0].strip())
+    indice_filme = cabecalho.index('#1 Movie')
+
+    filmes_frequencias = {}
+
+    for linha in linhas_csv[1:]:
+        campos = valida_campo(linha.strip())
+
+        filme = campos[indice_filme]
+
+        if filme in filmes_frequencias:
+            filmes_frequencias[filme] += 1
+        else:
+            filmes_frequencias[filme] = 1
+
+    filmes_mais_frequentes = sorted(
+        filmes_frequencias.items(), key=lambda item: item[1], reverse=True)
+
+    return filmes_mais_frequentes
+
+def le_arquivo(nome_arquivo):
+    arquivo = open(nome_arquivo, 'r')
+    linhas = arquivo.readlines()
+    arquivo.close()
+    return linhas
+
+def escrever_arquivo(resultado):
+    with open('etapa-4.txt', 'w', encoding="utf8") as arquivo:
+        arquivo.write("O(s) filme(s) mais frequente(s) é(são):\n")
+        for filme, frequencia in resultado:
+            arquivo.write(f"{filme}: {frequencia} vezes\n")
+
+        arquivo.write(
+            "\nO filmes que aparecem uma vez \n")
+
+
+def main():
+    arquivo_csv = 'actors.csv'
+    linhas_csv = le_arquivo(arquivo_csv)
+    filmes_mais_frequentes = encontrar_filmes_mais_frequentes(linhas_csv)
+
+    filmes_com_mais_de_uma_vez = [
+        (filme, frequencia) for filme, frequencia in filmes_mais_frequentes if frequencia > 1]
+
+    print("Os filmes mais frequentes são:")
+    for filme, frequencia in filmes_com_mais_de_uma_vez:
+        print(f"{filme}: {frequencia} vezes")
+
+    print("\nO filmes que aparecem uma vez na coluna")
+
+    escrever_arquivo(filmes_com_mais_de_uma_vez)
+
+
+if __name__ == "__main__":
+    main()
+
+----5
+
+def valida_campo(linha):
+    campos = []
+    campo = ""
+    aspas = False
+
+    for char in linha:
+        if char == ',' and not aspas:
+            campos.append(campo.strip())
+            campo = ""
+        else:
+            campo += char
+            if char == '"':
+                aspas = not aspas
+
+    campos.append(campo.strip())
+    return campos
+
+
+def le_arquivo(nome_arquivo):
+    arquivo = open(nome_arquivo, 'r')
+    linhas = arquivo.readlines()
+    arquivo.close()
+    return linhas
+
+
+def escrever_arquivo(resultado):
+    with open('etapa-5.txt', 'w', encoding="utf8") as arquivo:
+        arquivo.write(
+            "Lista dos atores ordenada pelo faturamento bruto total (em ordem decrescente):\n")
+        for ator, faturamento in resultado:
+            arquivo.write(f"{ator}: {faturamento:.2f}\n")
+
+
+def faturamento_total_por_ator(linhas_csv):
+    cabecalho = valida_campo(linhas_csv[0].strip())
+    indice_ator = cabecalho.index('Actor')
+    indice_total_gross = cabecalho.index('Total Gross')
+
+    faturamento_por_ator = {}
+
+    for linha in linhas_csv[1:]:
+        campos = valida_campo(linha.strip())
+
+        ator = campos[indice_ator]
+        total_gross = float(campos[indice_total_gross].replace(',', ''))
+
+        if ator in faturamento_por_ator:
+            faturamento_por_ator[ator] += total_gross
+        else:
+            faturamento_por_ator[ator] = total_gross
+
+    return faturamento_por_ator
+
+
+def main():
+    arquivo_csv = 'actors.csv'
+    linhas_csv = le_arquivo(arquivo_csv)
+    faturamento_por_ator = faturamento_total_por_ator(linhas_csv)
+
+    atores_ordenados_por_faturamento = sorted(
+        faturamento_por_ator.items(), key=lambda item: item[1], reverse=True)
+
+    print("Lista dos atores")
+    for ator, faturamento in atores_ordenados_por_faturamento:
+        print(f"{ator}: {faturamento:.2f}")
+
+    escrever_arquivo(atores_ordenados_por_faturamento)
+
+
+if __name__ == "__main__":
+    main()
