@@ -4,7 +4,7 @@
 
 2. [Exercicio 2](/Sprint_4/exercicios/Ex2/)
 
-3. [exercicio 3](/Sprint_4/exercicios/Ex3/)
+3. [Exercicio 3](/Sprint_4/exercicios/Ex3/)
 
 
 # Certificados
