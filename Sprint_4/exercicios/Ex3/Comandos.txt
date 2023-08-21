@@ -1,0 +1,2 @@
+docker build -t mascarar .
+docker run -it mascarar
