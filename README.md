@@ -15,4 +15,4 @@ Minhas experiências acadêmicas incluem participação em feiras de tecnologia,
 
 3. [Sprint 3](/Sprint_3/README.md)Nesta sprint, tive a oportunidade de aprender sobre a linguagem python a qual eu ainda não tinha contato anteriormente, seus paradigmas e usos, tais como orientação objeto, manipulação de arquivos, funções, e gerenciamento de pacoes. Em suma foi um ótimo curso e uma experiência enriquecedora.
 
-
+4. [Sprint 4](/Sprint_4/README.md)Nesta sprint, aprendi todos os fundamentos e utilidades da tecnologia docker e a importância de sua aplicação, uso de containers,imagens,swarms,YAML e a orquestração. O curso de estátistica ampliou meus conhecimentos da área agora com o uso da linguagem python e suas diversas aplicações.

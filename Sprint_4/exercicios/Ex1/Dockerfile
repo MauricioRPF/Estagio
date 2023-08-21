@@ -1,0 +1,13 @@
+FROM python
+
+    RUN apt-get update -y && \
+        apt-get install -y python3-pip python3-dev
+
+    WORKDIR /app
+
+    RUN pip install Flask
+    RUN pip install requests
+
+    COPY carguru.py .
+
+    CMD [ "python", "./carguru.py" ]

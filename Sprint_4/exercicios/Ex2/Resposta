@@ -1,0 +1,2 @@
+Containers podem ser reutilizados, "docker ps -a" lista todos arquivos criados e também parados. 
+"docker start ID ou nome" é o comando para inicializá-lo novamente.
