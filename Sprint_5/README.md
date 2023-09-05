@@ -1,11 +1,11 @@
 # Certificados
 
-1. [Certificado Aws Sales Practitioner](/certificados/Aws_SalesPractioner.png)
+1. [Certificado Aws Sales Practitioner](/Certificados/Aws_SalesPractioner.jpeg)
 
-2. [Certificado Aws Cloud Quest](/certificados/Aws_CloudPractioner.png)
+2. [Certificado Aws Cloud Quest](/Certificados/Aws_CloudQuest.jpeg)
 
-3. [Certificado Aws Cloud Economics](/certificados/Aws_CloudEconomics.png)
+3. [Certificado Aws Cloud Economics](/Certificados/Aws_CloudEconomics.jpeg)
 
-4. [Certificado Aws Cloud Exam Prep](/certificados/Aws_CloudPractitioner.png)
+4. [Certificado Aws Cloud Exam Prep](/Certificados/Aws_CloudPractitioner.jpeg)
 
 
