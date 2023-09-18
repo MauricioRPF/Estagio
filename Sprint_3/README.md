@@ -10,6 +10,8 @@
 
 5. [Resposta exercício 5](/Sprint_3/exercicios/Etapa5.py)
 
+6. [Exercicios Udemy](/Sprint_3/exercicios/Exercicios_udemy.txt)
+
 # Evidências
 
 1. [Arquivo txt dos exercícios](/Sprint_3/evidencias/Desafio.txt)
