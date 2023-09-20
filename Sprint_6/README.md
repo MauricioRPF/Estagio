@@ -1,27 +1,40 @@
 # Certificados
 
-1.  ![Data Analytics fundamentals](/Sprint_6/certificados/Analytics_fundamentals.png)
+Data Analytics fundamentals:        
+![Data Analytics fundamentals](/Sprint_6/certificados/Analytics_fundamentals.png)
 
-2.  ![Data Analytics](/Sprint_6/certificados/Analytics_on_aws.png)
+Data Analytics:
+![Data Analytics](/Sprint_6/certificados/Analytics_on_aws.png)
 
-3.  ![Kinesis Streams](/Sprint_6/certificados/kinesis_streams.png)
+Kinesis Streams:
+![Kinesis Streams](/Sprint_6/certificados/kinesis_streams.png)
 
-4.  ![Kinesis Analytics](/Sprint_6/certificados/kinesis_analitics.png)
+Kinesis Analytics:
+![Kinesis Analytics](/Sprint_6/certificados/kinesis_analitics.png)
 
-5.  ![Elastic MapReduce](/Sprint_6/certificados/elastic_map_reduce.png)
+Elastic MapReduce:
+![Elastic MapReduce](/Sprint_6/certificados/elastic_map_reduce.png)
 
-6.  ![Athena](/Sprint_6/certificados/Athena.png)
+Athena:
+![Athena](/Sprint_6/certificados/Athena.png)
 
-7.  ![Quicksight](/Sprint_6/certificados/Quicksight.png)
+Quicksight:
+![Quicksight](/Sprint_6/certificados/Quicksight.png)
 
-8.  ![IoT Analytics](/Sprint_6/certificados/iot_analytics.png)
+IoT Analytics
+![IoT Analytics](/Sprint_6/certificados/iot_analytics.png)
 
-9.  ![Redshift introduction](/Sprint_6/certificados/Redshift_start.png)
+Redshift introduction:
+![Redshift introduction](/Sprint_6/certificados/Redshift_start.png)
 
-10. ![Analyzing streaming data](/Sprint_6/certificados/analyzing_streaming_data.png)
+Analyzing streaming data:
+![Analyzing streaming data](/Sprint_6/certificados/analyzing_streaming_data.png)
 
-11. ![Redshift Warehousing](/Sprint_6/certificados/redshift_warehousing.png)
+Redshift Warehousing:
+![Redshift Warehousing](/Sprint_6/certificados/redshift_warehousing.png)
 
-12. ![Serverless Analytics](/Sprint_6/certificados/serverless_analytics.png)
+Serverless Analytics:
+![Serverless Analytics](/Sprint_6/certificados/serverless_analytics.png)
 
-13. ![Analytics for games](/Sprint_6/certificados/analytics_for_games.png)
+Analytics for games:
+![Analytics for games](/Sprint_6/certificados/analytics_for_games.png)
