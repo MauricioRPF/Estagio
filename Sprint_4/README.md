@@ -6,6 +6,8 @@
 
 3. [Exercicio 3](/Sprint_4/exercicios/Ex3/)
 
+4. [Exercicios Udemy](/Sprint_4/exercicios/Exercicios%20udemy.txt)
+
 
 # Certificados
 
