@@ -1,0 +1,145 @@
+Ex1 -------------------------------------------------------------------
+
+with open("number.txt") as f:
+    
+    numeros = list(map(int, f.readlines()))
+
+
+pares = list(filter(lambda x: x % 2 == 0, numeros))
+
+
+pares = sorted(pares, reverse=True)
+
+
+maiores = pares[:5]
+
+
+soma = sum(maiores)
+
+
+print(maiores)
+
+
+print(soma)
+
+
+Ex2 --------------------------------------------------------------------
+
+def conta_vogais(texto:str)-> int:
+   
+    vogais = ["a", "e", "i", "o", "u"]
+
+    
+    texto = texto.lower()
+
+    
+    vogais_texto = list(filter(lambda x: x in vogais, texto))
+
+   
+    return len(vogais_texto)
+
+
+Ex3 --------------------------------------------------------------------
+
+from functools import reduce
+
+def calcula_saldo(lancamentos):
+    
+    valores = map(lambda x: x[0] if x[1] == 'C' else -x[0], lancamentos)
+
+    
+    saldo = reduce(lambda x, y: x + y, valores)
+
+    
+    return saldo
+
+
+Ex4 --------------------------------------------------------------------
+
+def calcular_valor_maximo(operadores,operandos) -> float:
+    
+    operacoes = {
+        '+': lambda x, y: x + y,
+        '-': lambda x, y: x - y,
+        '*': lambda x, y: x * y,
+        '/': lambda x, y: x / y,
+        '%': lambda x, y: x % y
+    }
+
+    
+    combinacoes = zip(operadores, operandos)
+
+     
+    valores = map(lambda x: operacoes[x[0]](*x[1]), combinacoes)
+
+    
+    valor_maximo = max(valores)
+
+    
+    return valor_maximo
+
+
+Ex5 ----------------------------------------------------------------------
+
+def process_student(line):
+    data = line.strip().split(',')
+    name = data[0]
+    grades = list(map(int, data[1:]))
+    sorted_grades = sorted(grades, reverse=True)
+    top_grades = sorted_grades[:3]
+    average = sum(top_grades) / 3
+    return name, top_grades, average
+
+
+with open('estudantes.csv', 'r') as file:
+    lines = file.readlines()
+    students_data = list(map(process_student, lines))
+
+
+sorted_students_data = sorted(students_data, key=lambda x: x[0])
+
+
+for student in sorted_students_data:
+    name, top_grades, average = student
+    rounded_average = round(average, 2)
+    print(f"Nome: {name} Notas: {top_grades} Média: {rounded_average}")
+
+
+Ex6 -----------------------------------------------------------------------
+
+def maiores_que_media(conteudo:dict)->list:
+    
+    media = sum(conteudo.values()) / len(conteudo)
+
+    
+    produtos_maiores = []
+
+    
+    for produto, preco in conteudo.items():
+        
+        if preco > media:
+            produtos_maiores.append((produto, preco))
+
+    
+    produtos_maiores.sort(key=lambda x: x[1])
+
+    
+    return produtos_maiores
+
+
+Ex7 -----------------------------------------------------------------------
+
+def pares_ate(n:int):
+    
+    i = 2
+
+    
+    while i <= n:
+        
+        if i % 2 == 0:
+            yield i
+
+       
+        i += 1
+
+    
